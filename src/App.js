@@ -38,12 +38,6 @@ function App() {
         fetch("https://stark-lowlands-44847.herokuapp.com/dashboard")
             .then((res) => res.json())
             .then((data) => {
-                // for (const dataObj of data) {
-                // console.log(myIntensity.push(data.intensity));
-                // }
-                // for (let i = 0; i <= data.length; i++) {
-                //     console.log(data[i].sector);
-                // }
                 data.map((d, index) => {
                     myIntensity.push(d.intensity);
                     myLikelihood.push(d.likelihood);
@@ -52,17 +46,8 @@ function App() {
                 });
                 console.log(myIntensity);
                 setMyData(data);
-                // console.log(data.intensity);
             });
     }, []);
-
-    // console.log(myData);
-
-    // console.log(myData.length);
-
-    // for (let i = 0; i <= myData.length; i++) {
-    //     console.log(myData[i].intensity);
-    // }
 
     const options = {
         responsive: true,
